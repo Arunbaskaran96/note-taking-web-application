@@ -5,7 +5,7 @@ import Addnote from '../../components/addnote/Addnote'
 
 
 function Homepage() {
-
+    const [search,setSearch]=useState("")
     const [data,setData]=useState([
         {
           id:1,
@@ -24,6 +24,11 @@ function Homepage() {
         }
       ])
 
+      const handleChange=(e)=>{
+        e.preventDefault()
+        setSearch(e.target.value)
+      }
+
 
   return (
     <div className='homepageWrapper'>
@@ -35,10 +40,12 @@ function Homepage() {
         </div>
         <hr/>
         <div className='homePageBottom'>
-
+          <div className='noteSearchContainer'>
+            <input  onChange={handleChange} className='notesSearch' type='text' placeholder='search here based on notes title...'/>
+          </div>
           <div className='notesContainer'>
           {
-          data?.map((item)=>{
+          data?.filter((item)=>item.title.toLowerCase().includes(search.toLocaleLowerCase())).map((item)=>{
             return(
               <div  className='notesIndividualContainer'>
                 <div className='notesTop'>
