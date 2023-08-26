@@ -1,7 +1,10 @@
 import React, { useRef } from 'react'
 import "./Addnote.css"
+import {useDispatch} from "react-redux"
+import { addnewData } from '../../Redux/Reducer/NotesSlice'
 
 function Addnote() {
+  const addDispatch=useDispatch()
     const title=useRef(null)
     const content=useRef(null)
     const clickHandler=(e)=>{
@@ -11,9 +14,11 @@ function Addnote() {
           title:title.current.value,
           content:content.current.value
         }
-        console.log(newData)
+        addDispatch(addnewData(newData))
       }
-  
+      alert("Successfully added")
+      title.current.value=null
+      content.current.value=null
     }
     return (
       <div className='addnoteWrapper'>

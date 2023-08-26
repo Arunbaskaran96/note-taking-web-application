@@ -49,6 +49,7 @@
     padding: 4px;
     margin-left: 10px;
     color: wheat;
+    cursor: pointer;
 }
 
 .deleteButton{
@@ -57,6 +58,7 @@
     margin-left: 10px;
     color: wheat;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .notesSearch{

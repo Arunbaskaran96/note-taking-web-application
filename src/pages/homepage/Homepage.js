@@ -1,34 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import "./Homepage.css"
 import Topbar from '../../components/topbar/Topbar'
 import Addnote from '../../components/addnote/Addnote'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteOldData } from '../../Redux/Reducer/NotesSlice'
 
 
 function Homepage() {
     const [search,setSearch]=useState("")
-    const [data,setData]=useState([
-        {
-          id:1,
-          title:"abc",
-          content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-        },
-        {
-          id:2,
-          title:"sf",
-          content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-        },
-        {
-          id:3,
-          title:"ggv",
-          content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-        }
-      ])
+    const deleteDispath=useDispatch()
+    const data=useSelector(state=>state.notes.item)
 
       const handleChange=(e)=>{
         e.preventDefault()
         setSearch(e.target.value)
       }
+      
 
+      const deleteHandler=(item)=>{
+        deleteDispath(deleteOldData(item))
+      }
 
   return (
     <div className='homepageWrapper'>
@@ -59,7 +50,7 @@ function Homepage() {
                 <hr/>
                 <div className='notesBottom'>
                     <button className='editButton'>Edit</button>
-                    <button className='deleteButton'>Delete</button>
+                    <button onClick={()=>deleteHandler(item)} className='deleteButton'>Delete</button>
                 </div>
               </div>
             )
