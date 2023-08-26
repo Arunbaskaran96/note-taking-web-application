@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Homepage from './pages/homepage/Homepage';
+import Topbar from './components/topbar/Topbar';
+import Viewnote from './components/Viewnote/Viewnote';
 
 function App() {
   return (
     <div>
-      <Homepage/>
+      <Topbar/>
+      <Viewnote/>
     </div>
   );
 }

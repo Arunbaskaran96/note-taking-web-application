@@ -1,0 +1,45 @@
+.viewnoteBottom{
+    display: flex;
+    align-items: center;
+}
+
+.viewnoteimage{
+    width: 40%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.viewnoteTitle{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.backButton{
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.viewnoteCreatedAt{
+    text-align: center;
+    font-size: 20px;
+}
+
+.viewnoteBottom{
+    margin: 0px 50px;
+    margin-top: 40px;
+}
+
+.viewnoteContent{
+    font-size: 17px;
+    padding: 0px 20px;
+}
+
+.viewnoteContent::first-letter{
+    margin-left: 40px;
+}

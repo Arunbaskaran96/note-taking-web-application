@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 35px;
+    justify-content: center;
 }
 
 .notesIndividualContainer{
@@ -23,6 +24,8 @@
 .noteContent{
     font-size: 17px;
     padding: 5px;
+    height: 60px;
+    overflow: hidden;
 
 }
 .noteTitle{
@@ -65,7 +68,7 @@
     width: 400px;
     height: 40px;
     border-radius: 10px;
-    margin-left: 400px;
+    margin-left: 500px;
     margin-top: 25px;
 }
 
@@ -88,4 +91,19 @@
 }
 .pageLink.active{
     color: red;
+}
+
+.homePageBottom{
+    height: 480px;
+}
+
+.viewButton{
+    background-color: green;
+    color: wheat;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.noteContent::first-letter{
+    margin-left: 28px;
 }

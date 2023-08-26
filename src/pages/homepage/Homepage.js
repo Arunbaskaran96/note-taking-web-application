@@ -1,23 +1,27 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import "./Homepage.css"
 import Topbar from '../../components/topbar/Topbar'
 import Addnote from '../../components/addnote/Addnote'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteOldData } from '../../Redux/Reducer/NotesSlice'
+import { deleteOldData, noteData } from '../../Redux/Reducer/NotesSlice'
+import axios from 'axios'
 
 
 function Homepage() {
     const [search,setSearch]=useState("")
     const deleteDispath=useDispatch()
+    const dataDispatch=useDispatch()
     const data=useSelector(state=>state.notes.item)
+
+    console.log(data)
 
     
     const [currentPage,setCurrentPage]=useState(1)
     const recordsPerPage=6
     const lastIndex=currentPage*recordsPerPage
     const firstIndex=lastIndex-recordsPerPage
-    const records=data.slice(firstIndex,lastIndex)
-    const npages=Math.ceil(data.length/recordsPerPage)
+    const records=data?.slice(firstIndex,lastIndex)
+    const npages=Math.ceil(data?.length/recordsPerPage)
     const numbers=[]
     for(let i=1;i<=npages;i++){
         numbers.push(i)
@@ -36,6 +40,19 @@ function Homepage() {
     const changeCurrentPage=(id)=>{
         setCurrentPage(id)
     }
+
+
+    useEffect(()=>{
+      const getData=async()=>{
+        try {
+          const notes=await axios.get(`http://localhost:8000/api/notes/${"64ea101be4d8d5a2b8e45af1"}`)
+          dataDispatch(noteData(notes.data))
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      getData()
+    },[])
 
 
       const handleChange=(e)=>{
@@ -77,6 +94,7 @@ function Homepage() {
                 <hr/>
                 <div className='notesBottom'>
                     <button className='editButton'>Edit</button>
+                    <button className='viewButton'>View</button>
                     <button onClick={()=>deleteHandler(item)} className='deleteButton'>Delete</button>
                 </div>
               </div>

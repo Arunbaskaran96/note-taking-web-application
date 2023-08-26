@@ -5,71 +5,10 @@ import { createSlice } from "@reduxjs/toolkit";
 export const NotesSlice=createSlice({
     name:"NoteSlice",
     initialState:{
-        item:[
-            {
-              id:1,
-              title:"abc",
-              content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-            },
-            {
-              id:2,
-              title:"sf",
-              content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-            },
-            {
-              id:3,
-              title:"ggv",
-              content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-            },
-            {
-                id:4,
-                title:"rth",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:5,
-                title:"sdfff",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:6,
-                title:"rghrthrtg",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:1,
-                title:"abc",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:2,
-                title:"sf",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:3,
-                title:"ggv",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                  id:4,
-                  title:"rth",
-                  content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-                },
-                {
-                  id:5,
-                  title:"sdfff",
-                  content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-                },
-                {
-                  id:6,
-                  title:"rghrthrtg",
-                  content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-                },
-          ]
+        item:[]
     },
     reducers:{
-        data:(state,action)=>{
+        noteData:(state,action)=>{
             state.item=action.payload
           },
           addnewData:(state,action)=>{
@@ -87,5 +26,5 @@ export const NotesSlice=createSlice({
 
 })
 
-export const {data,addnewData,editOldData,deleteOldData}=NotesSlice.actions
+export const {noteData,addnewData,editOldData,deleteOldData}=NotesSlice.actions
 export default NotesSlice.reducer
