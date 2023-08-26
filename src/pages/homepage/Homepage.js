@@ -5,6 +5,7 @@ import Addnote from '../../components/addnote/Addnote'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteOldData, noteData } from '../../Redux/Reducer/NotesSlice'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 function Homepage() {
@@ -94,7 +95,7 @@ function Homepage() {
                 <hr/>
                 <div className='notesBottom'>
                     <button className='editButton'>Edit</button>
-                    <button className='viewButton'>View</button>
+                    <Link to={`/viewnote/${item._id}`} className='viewButton'>View</Link>
                     <button onClick={()=>deleteHandler(item)} className='deleteButton'>Delete</button>
                 </div>
               </div>
