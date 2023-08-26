@@ -1,0 +1,51 @@
+.loginImage{
+    width: 300px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.loginWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.loginLabel{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.loginInput{
+    width: 320px;
+    height: 35px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+
+.loginRightside{
+    padding-left: 25px;
+}
+
+.loginButton{
+    background-color: green;
+    color: white;
+    padding: 10px 142px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.RgisterButton{
+    background-color: grey;
+    color: white;
+    padding: 10px 134px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.loginRightBottom{
+    padding-left: 25px;
+    margin-top: 10px;
+
+}
