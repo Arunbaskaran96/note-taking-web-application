@@ -22,33 +22,18 @@ export const NotesSlice=createSlice({
               content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
             },
             {
-                id:1,
-                title:"abc",
+                id:4,
+                title:"rth",
                 content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
               },
               {
-                id:2,
-                title:"sf",
+                id:5,
+                title:"sdfff",
                 content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
               },
               {
-                id:3,
-                title:"ggv",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:1,
-                title:"abc",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:2,
-                title:"sf",
-                content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              },
-              {
-                id:3,
-                title:"ggv",
+                id:6,
+                title:"rghrthrtg",
                 content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
               },
               {
@@ -65,7 +50,22 @@ export const NotesSlice=createSlice({
                 id:3,
                 title:"ggv",
                 content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
-              }
+              },
+              {
+                  id:4,
+                  title:"rth",
+                  content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
+                },
+                {
+                  id:5,
+                  title:"sdfff",
+                  content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
+                },
+                {
+                  id:6,
+                  title:"rghrthrtg",
+                  content:"lorem dsfh  dsfug jksdf jhdsf jhdsg sdjkg hdg zc "
+                },
           ]
     },
     reducers:{
