@@ -1,0 +1,44 @@
+.addNoteLabel{
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif
+}
+
+.addNoteInput{
+    width: 300px;
+    height: 30px;
+}
+
+.addnoteMiniContainer{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding: 0px 200px;
+}
+
+.addNoteButton{
+    background-color: green;
+    color: white;
+    padding: 5px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    .addnoteMiniContainer{
+        padding: 0px;
+        flex-wrap: wrap;
+    }
+    .addNoteLabel{
+        display: none;
+    }
+    .addNoteInput{
+        margin-left: 15px;
+        margin-bottom: 15px;
+        height: 40px;
+    }
+    .addNoteButton{
+        margin-left: 120px;
+        padding: 10px;
+    }
+  }
