@@ -1,3 +1,60 @@
+.notesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 35px;
+}
+
+.notesIndividualContainer{
+    margin: 10px;
+    padding: 10px;
+    height: 160px;
+    width: 330px;
+    background-color: yellow;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.notesTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noteContent{
+    font-size: 17px;
+    padding: 5px;
+
+}
+.noteTitle{
+    font-size: 20px;
+}
+
+
+
 .homepageMiddle{
     margin-bottom: 15px;
+}
+.notesMiddle{
+    height: 70px;
+}
+.notesBottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+}
+
+.editButton{
+    background-color: blue;
+    padding: 4px;
+    margin-left: 10px;
+    color: wheat;
+}
+
+.deleteButton{
+    background-color: red;
+    padding: 4px;
+    margin-left: 10px;
+    color: wheat;
+    margin-right: 5px;
 }
