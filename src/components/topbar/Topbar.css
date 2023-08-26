@@ -1,0 +1,51 @@
+.topbarWrapper{
+    background-color: rgb(64, 141, 172);
+    height: 50px;
+}
+
+.appImage{
+    height: 50px;
+    aspect-ratio: 1/1;
+}
+
+.appNameText{
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.topbaarLeft{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.topbarWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbarRight{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+
+.userName{
+    font-size: 20px;
+    color: white;
+}
+
+.topbarButton{
+    background-color: red;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .appNameText,.userName{
+        display: none;
+    }
+  }
