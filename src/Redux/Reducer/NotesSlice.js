@@ -16,7 +16,7 @@ export const NotesSlice=createSlice({
               state.item=[...state.item,action.payload]
           },
           editOldData:(state,action)=>{
-              const filterData=state.item.filter(d=>d.id!=action.payload._id)
+              const filterData=state.item.find(d=>d._id!=action.payload._id)
               state.item=[...filterData,action.payload]
           },
           deleteOldData:(state,action)=>{

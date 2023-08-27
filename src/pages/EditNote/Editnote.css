@@ -35,6 +35,13 @@
     width: 350px;
     height: 28px;
     margin-top: 15px;
+    cursor: pointer;
+}
+
+.updateDiableButton{
+    width: 350px;
+    height: 28px;
+    margin-top: 15px;
 }
 
 .backButton{
