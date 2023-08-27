@@ -53,6 +53,7 @@
     margin-left: 10px;
     color: wheat;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .deleteButton{
@@ -102,6 +103,7 @@
     color: wheat;
     padding: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .noteContent::first-letter{

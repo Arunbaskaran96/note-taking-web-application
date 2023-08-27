@@ -14,7 +14,6 @@ function Homepage() {
     const dataDispatch=useDispatch()
     const data=useSelector(state=>state.notes.item)
 
-    console.log(data)
 
     
     const [currentPage,setCurrentPage]=useState(1)
@@ -81,9 +80,9 @@ function Homepage() {
           </div>
           <div className='notesContainer'>
           {
-          records?.filter((item)=>item.title.toLowerCase().includes(search.toLocaleLowerCase())).map((item)=>{
+          records?.filter((item)=>item.title.toLowerCase().includes(search.toLocaleLowerCase())).map((item,_id)=>{
             return(
-              <div  className='notesIndividualContainer'>
+              <div  className='notesIndividualContainer' key={_id}>
                 <div className='notesTop'>
                   <h5 className='noteTitle'>{item.title}</h5>
                   <span className='noteDate'>25-08-2023</span>
@@ -94,7 +93,7 @@ function Homepage() {
                 </div>
                 <hr/>
                 <div className='notesBottom'>
-                    <button className='editButton'>Edit</button>
+                    <Link to={`/editnote/${item._id}`}  className='editButton'>Edit</Link>
                     <Link to={`/viewnote/${item._id}`} className='viewButton'>View</Link>
                     <button onClick={()=>deleteHandler(item)} className='deleteButton'>Delete</button>
                 </div>
