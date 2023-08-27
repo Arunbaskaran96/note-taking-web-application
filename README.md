@@ -1,4 +1,4 @@
-Live link --> (https://delightful-cajeta-385378.netlify.app/)
+Live link --> https://delightful-cajeta-385378.netlify.app/
 
 User Authentication:
 email : arundhilla@gmail.com
