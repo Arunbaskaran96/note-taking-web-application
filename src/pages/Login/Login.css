@@ -11,6 +11,10 @@
     height: 90vh;
     flex-wrap: wrap;
     width: 90%;
+    flex-direction: column;
+}
+.Auth{
+    margin-top: 25px;
 }
 
 .loginLabel{
