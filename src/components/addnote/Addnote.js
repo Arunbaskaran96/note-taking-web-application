@@ -51,19 +51,21 @@ function Addnote() {
     return (
       <div className='addnoteWrapper'>
           <form className='addnoteMiniContainer' onSubmit={clickHandler}>
-            <>
+            <div className='addnotecombo'>
               <label className='addNoteLabel'>Title : </label>
               <input ref={title} placeholder='enter your title here..' className='addNoteInput'/><br/>
-              </>
-              <>
+              </div>
+              <div className='addnotecombo'>
               <label className='addNoteLabel'>Content : </label>
               <input ref={content} placeholder='enter your content here..' className='addNoteInput'/><br/>
-              </>
-              <>
+              </div>
+              <div className='addnotecombo'>
               <label className='addNoteLabel'>Image : </label>
-              <input onChange={(e)=>setImage(e.target.files[0])}  type='file' accept='.png,.jpeg,.img,.jpg'/><br/>
-              </>
+              <input className='fileinput' onChange={(e)=>setImage(e.target.files[0])}  type='file' accept='.png,.jpeg,.img,.jpg'/><br/>
+              </div>
+              <div className='addnotecombo'>
               <button disabled={disable} className='addNoteButton'>Add note</button>
+              </div>
           </form>
       </div>
   )

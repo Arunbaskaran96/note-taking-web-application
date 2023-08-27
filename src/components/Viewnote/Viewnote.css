@@ -1,6 +1,7 @@
 .viewnoteBottom{
     display: flex;
     align-items: center;
+
 }
 
 .viewnoteimage{
@@ -14,6 +15,9 @@
     font-size: 30px;
     text-align: center;
     margin-top: 20px;
+}
+.viewnoteWrapper{
+    margin-top: 65px;
 }
 
 .backButton{
@@ -37,6 +41,7 @@
 .viewnoteBottom{
     margin: 0px 50px;
     margin-top: 40px;
+
 }
 
 .viewnoteContent{
@@ -47,3 +52,14 @@
 .viewnoteContent::first-letter{
     margin-left: 40px;
 }
+
+
+@media only screen and (max-width: 900px) {
+    .viewnoteimage{
+        width: 100%;
+        object-fit: contain;
+    }
+    .viewnoteBottom{
+        flex-wrap: wrap;
+    }
+  }

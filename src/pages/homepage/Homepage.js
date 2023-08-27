@@ -17,7 +17,7 @@ function Homepage() {
     const user=useSelector(state=>state.notes.user)
 
 
-    
+    /*pagination*/
     const [currentPage,setCurrentPage]=useState(1)
     const recordsPerPage=6
     const lastIndex=currentPage*recordsPerPage
@@ -74,7 +74,7 @@ function Homepage() {
       }
 
   return (
-    <div className='homepageWrapper'>
+    <div className='homepageWrappe'>
         <div className='homebarTop'>
             <Topbar/>
         </div>
@@ -93,7 +93,7 @@ function Homepage() {
               <div  className='notesIndividualContainer' key={_id}>
                 <div className='notesTop'>
                   <h5 className='noteTitle'>{item.title}</h5>
-                  <span className='noteDate'>25-08-2023</span>
+                  <span className='noteDate'>{item.createdtAt}</span>
                 </div>
                   <hr/>
                 <div className='notesMiddle'>

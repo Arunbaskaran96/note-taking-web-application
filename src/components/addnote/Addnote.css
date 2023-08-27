@@ -6,6 +6,14 @@
 .addNoteInput{
     width: 300px;
     height: 30px;
+    margin-right: 8px;
+}
+
+.addnoteWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 53px;
 }
 
 .addnoteMiniContainer{
@@ -14,6 +22,7 @@
     margin-top: 20px;
     padding: 0px 70px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .addNoteButton{
@@ -24,14 +33,21 @@
     cursor: pointer;
 }
 
+.addnotecombo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 @media only screen and (max-width: 1000px) {
     .addnoteMiniContainer{
         padding: 0px;
         flex-wrap: wrap;
+        margin-left: 20px;
     }
-    .addNoteLabel{
+    /* .addNoteLabel{
         display: none;
-    }
+    } */
     .addNoteInput{
         margin-left: 15px;
         margin-bottom: 15px;
@@ -40,5 +56,9 @@
     .addNoteButton{
         margin-left: 120px;
         padding: 10px;
+        margin-top: 15px;
+    }
+    .fileinput{
+        margin-left: 10px;
     }
   }

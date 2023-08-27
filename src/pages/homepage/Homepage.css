@@ -5,10 +5,14 @@
     justify-content: center;
 }
 
+.homepageWrapper{
+    margin-top: 51px;
+}
+
 .notesIndividualContainer{
     margin: 10px;
     padding: 10px;
-    height: 160px;
+    height: 170px;
     width: 330px;
     background-color: yellow;
     border-radius: 20px;
@@ -24,7 +28,7 @@
 .noteContent{
     font-size: 17px;
     padding: 5px;
-    height: 60px;
+    height: 70px;
     overflow: hidden;
 
 }
@@ -38,7 +42,7 @@
     margin-bottom: 15px;
 }
 .notesMiddle{
-    height: 70px;
+    height: 90px;
 }
 .notesBottom{
     display: flex;
@@ -70,8 +74,13 @@
     width: 400px;
     height: 40px;
     border-radius: 10px;
-    margin-left: 500px;
-    margin-top: 25px;
+    margin-top: 20px;
+}
+
+.noteSearchContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 
@@ -110,3 +119,9 @@
 .noteContent::first-letter{
     margin-left: 28px;
 }
+
+@media only screen and (max-width: 700px) {
+    .homePageBottom{
+        height: 100%;
+    }
+  }
