@@ -42,7 +42,7 @@
 .editWrapper{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 60px;
+    height:100vh;
 }
 
 .updateDiableButton{

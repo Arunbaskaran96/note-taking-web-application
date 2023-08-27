@@ -25,7 +25,7 @@ function Editnote() {
             setDisable(false)
             try {
                 setDisable(true)
-                await axios.put(`http://localhost:8000/api/notes/updatenote/${params.id}`,value)
+                await axios.put(`https://note-taking-api-8e7j.onrender.com/api/notes/updatenote/${params.id}`,value)
                 alert("Updated Successfully")
                 nav("/homepage")
             } catch (error) {
@@ -50,9 +50,6 @@ function Editnote() {
   return (
     <div className='editWrapper'>
         <Topbar/>
-        <div className='backBtnContainer'>
-            <Link to="/homepage" className='backButton'>Back</Link>
-        </div>
         <div className='editContainer'>
         <form className='editMinicontainer' onSubmit={formik.handleSubmit}>
             <label className='editNoteLabel'>Title :</label><br/>

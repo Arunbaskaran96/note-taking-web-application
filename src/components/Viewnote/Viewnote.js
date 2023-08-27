@@ -14,7 +14,7 @@ function Viewnote() {
     useEffect(()=>{
         const getIndividualNote=async()=>{
             try {
-                const {data}=await axios.get(`http://localhost:8000/api/notes/note/${params.id}`)
+                const {data}=await axios.get(`https://note-taking-api-8e7j.onrender.com/api/notes/note/${params.id}`)
                 setNote(data)
             } catch (error) {
                 console.log(error)
@@ -40,7 +40,7 @@ function Viewnote() {
             <h5 className='viewnoteCreatedAt'>Created At : <span>{f.format()}</span></h5>
         </div>
         <div className='viewnoteBottom'>
-            <img className='viewnoteimage' src={note.image} alt='viewNoteImg'/>
+            <img className='viewnoteimage' src={`https://note-taking-api-8e7j.onrender.com//images/${note.image}`} alt='viewNoteImg'/>
             <p className='viewnoteContent'>{note.content}</p>
         </div>
     </div>

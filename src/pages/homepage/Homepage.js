@@ -89,11 +89,15 @@ function Homepage() {
           <div className='notesContainer'>
           {
           records?.filter((item)=>item.title.toLowerCase().includes(search.toLocaleLowerCase())).map((item,_id)=>{
+            const date=new Date(item.createdAt)
+            const f=new Intl.DateTimeFormat("en-us",{
+                dateStyle:"full"
+            })
             return(
               <div  className='notesIndividualContainer' key={_id}>
                 <div className='notesTop'>
                   <h5 className='noteTitle'>{item.title}</h5>
-                  <span className='noteDate'>{item.createdtAt}</span>
+                  <span className='noteDate'>{f.format()}</span>
                 </div>
                   <hr/>
                 <div className='notesMiddle'>
