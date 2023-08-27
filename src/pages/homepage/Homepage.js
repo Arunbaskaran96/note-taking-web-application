@@ -9,10 +9,12 @@ import { Link } from 'react-router-dom'
 
 
 function Homepage() {
+
     const [search,setSearch]=useState("")
     const deleteDispath=useDispatch()
     const dataDispatch=useDispatch()
     const data=useSelector(state=>state.notes.item)
+    const user=useSelector(state=>state.notes.user)
 
 
     
@@ -45,8 +47,9 @@ function Homepage() {
     useEffect(()=>{
       const getData=async()=>{
         try {
-          const notes=await axios.get(`http://localhost:8000/api/notes/${"64ea101be4d8d5a2b8e45af1"}`)
+          const notes=await axios.get(`http://localhost:8000/api/notes/${user._id}`)
           dataDispatch(noteData(notes.data))
+          // console.log(notes.data)
         } catch (error) {
           console.log(error)
         }
@@ -61,8 +64,13 @@ function Homepage() {
       }
       
 
-      const deleteHandler=(item)=>{
-        deleteDispath(deleteOldData(item))
+      const deleteHandler=async(item)=>{
+        try {
+          deleteDispath(deleteOldData(item))
+          await axios.delete(`http://localhost:8000/api/notes/${item._id}`)
+        } catch (error) {
+          console.log(error)
+        }
       }
 
   return (
@@ -71,7 +79,7 @@ function Homepage() {
             <Topbar/>
         </div>
         <div className='homepageMiddle'>
-          <Addnote data={data}  />
+          <Addnote  />
         </div>
         <hr/>
         <div className='homePageBottom'>

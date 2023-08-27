@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./Login.css"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, json, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../../Redux/Reducer/NotesSlice'
 
 function Login() {
   const email=useRef(null)
   const password=useRef(null)
   const nav=useNavigate()
   const [disable,setDisable]=useState(false)
+  const userDispatch=useDispatch()
 
   useEffect(()=>{
     email.current.focus()
@@ -23,6 +26,7 @@ function Login() {
       }
       const {data}=await axios.post("http://localhost:8000/api/users/login",userData)
       window.localStorage.setItem("user",JSON.stringify(data))
+      userDispatch(addUser(data))
       nav("/homepage")
       setDisable(false)
     } catch (error) {

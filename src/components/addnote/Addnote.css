@@ -11,9 +11,9 @@
 .addnoteMiniContainer{
     display: flex;
     justify-content: space-between;
-
     margin-top: 20px;
-    padding: 0px 200px;
+    padding: 0px 70px;
+    align-items: center;
 }
 
 .addNoteButton{
