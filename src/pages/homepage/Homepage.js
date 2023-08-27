@@ -13,8 +13,10 @@ function Homepage() {
     const [search,setSearch]=useState("")
     const deleteDispath=useDispatch()
     const dataDispatch=useDispatch()
+    const [isLoading,setLoading]=useState(true)
     const data=useSelector(state=>state.notes.item)
     const user=useSelector(state=>state.notes.user)
+
 
 
     /*pagination*/
@@ -47,9 +49,11 @@ function Homepage() {
     useEffect(()=>{
       const getData=async()=>{
         try {
+          setLoading(true)
           const notes=await axios.get(`https://note-taking-api-8e7j.onrender.com/api/notes/${user._id}`)
           dataDispatch(noteData(notes.data))
           // console.log(notes.data)
+          setLoading(false)
         } catch (error) {
           console.log(error)
         }
@@ -82,7 +86,12 @@ function Homepage() {
           <Addnote  />
         </div>
         <hr/>
-        <div className='homePageBottom'>
+        {
+          isLoading ?
+          <div className='loadingContainer'>Fetching Data....Please wait....</div>
+          :
+          <>
+                  <div className='homePageBottom'>
           <div className='noteSearchContainer'>
             <input  onChange={handleChange} className='notesSearch' type='text' placeholder='search here based on notes title...'/>
           </div>
@@ -107,7 +116,7 @@ function Homepage() {
                 <div className='notesBottom'>
                     <Link to={`/editnote/${item._id}`}  className='editButton'>Edit</Link>
                     <Link to={`/viewnote/${item._id}`} className='viewButton'>View</Link>
-                    <button onClick={()=>deleteHandler(item)} className='deleteButton'>Delete</button>
+                    <button  onClick={()=>deleteHandler(item)} className='deleteButton'>Delete</button>
                 </div>
               </div>
             )
@@ -118,22 +127,25 @@ function Homepage() {
         <div>
             <ul className='pagination' >
                 <li className='pageItem'>
-                    <a onClick={prevPage} href="#" className='pageLink'>Prev</a>
+                    <a onClick={prevPage} href="#" style={currentPage==1 ? {pointerEvents:"none"} : {pointerEvents:"all"}}  className='pageLink'>Prev</a>
                 </li>
+                {/* {`pageItem ${currentPage===n ? 'active' :''}?`}  */}
                 {
                     numbers.map((n,i)=>{
                         return(
-                            <li className={`pageItem ${currentPage===n ? 'active' :''}?`} key={i}>
-                            <a href="#" onClick={()=>changeCurrentPage(n)} className='pageLink'>{n}</a>
+                            <li className="pageItem" key={i}>
+                            <a href="#" onClick={()=>changeCurrentPage(n)} className={`${currentPage===n ? 'pageLink active' :'pageLink'}`}>{n}</a>
                         </li>
                         )
                     })
                 }
                 <li className='pageItem'>
-                    <a onChange={nextPage} href="#" className='pageLink'>Next</a>
+                    <a onChange={nextPage}  style={currentPage==numbers.length ? {pointerEvents:"none"} : {pointerEvents:"all"}} href="#" className='pageLink'>Next</a>
                 </li>
             </ul>
         </div>
+          </>
+        }
     </div>
   )
 }

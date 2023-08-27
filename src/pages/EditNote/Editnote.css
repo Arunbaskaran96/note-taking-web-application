@@ -43,6 +43,15 @@
     display: flex;
     flex-wrap: wrap;
     height:100vh;
+    justify-content: center;
+}
+
+.loadingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 50px;
 }
 
 .updateDiableButton{

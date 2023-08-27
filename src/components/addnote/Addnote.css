@@ -33,6 +33,11 @@
     cursor: pointer;
 }
 
+.addNoteDisableButton{
+    padding: 5px;
+    margin-left: 25px;
+}
+
 .addnotecombo{
     display: flex;
     flex-wrap: wrap;

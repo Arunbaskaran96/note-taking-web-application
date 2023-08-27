@@ -90,18 +90,28 @@
     justify-content: center;
 }
 
+.loadingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 50px;
+}
+
 .pageItem{
     list-style-type: none;
     border: 1px solid black;
     margin: 0px 10px;
-    padding: 5px;
+    padding: 2px;
 }
 
 .pageLink{
     text-decoration: none;
+    padding: 4px;
 }
 .pageLink.active{
     color: red;
+    background-color: black;
 }
 
 .homePageBottom{

@@ -30,18 +30,19 @@ function Addnote() {
           newData.image=fileName
           try {
             await axios.post("https://note-taking-api-8e7j.onrender.com/api/upload",data)
+            alert("Successfully added")
             addDispatch(addnewData(newData))
             title.current.value=null
             content.current.value=null
             setImage=null
+  
             setDiable(false)
           } catch (error) {
             console.log(error)
           }
       }
-      console.log(newData)
+
       try {
-        alert("Successfully added")
         await axios.post(`https://note-taking-api-8e7j.onrender.com/api/notes/addnote/${user._id}`,newData)
       } catch (error) {
         console.log(error)
@@ -64,7 +65,7 @@ function Addnote() {
               <input className='fileinput' onChange={(e)=>setImage(e.target.files[0])}  type='file' accept='.png,.jpeg,.img,.jpg'/><br/>
               </div>
               <div className='addnotecombo'>
-              <button disabled={disable} className='addNoteButton'>Add note</button>
+              <button disabled={disable} className={!disable ? 'addNoteButton' : "addNoteDisableButton"}>Add note</button>
               </div>
           </form>
       </div>

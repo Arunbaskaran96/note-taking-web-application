@@ -11,6 +11,7 @@ import { editOldData } from '../../Redux/Reducer/NotesSlice'
 function Editnote() {
     const nav=useNavigate()
     const [disable,setDisable]=useState(false)
+    const [isLoading,setLoading]=useState(true)
     const params=useParams()
     const editDispatch=useDispatch()
     const formik=useFormik({
@@ -38,9 +39,10 @@ function Editnote() {
     useEffect(()=>{
         const getNote=async()=>{
             try {
+                setLoading(true)
                 const {data}=await axios.get(`https://note-taking-api-8e7j.onrender.com/api/notes/note/${params.id}`)
                 formik.setValues(data)
-                console.log(data)
+                setLoading(false)
             } catch (error) {
                 console.log(error)
             }
@@ -50,18 +52,23 @@ function Editnote() {
   return (
     <div className='editWrapper'>
         <Topbar/>
-        <div className='editContainer'>
-        <form className='editMinicontainer' onSubmit={formik.handleSubmit}>
-            <label className='editNoteLabel'>Title :</label><br/>
-            <input value={formik.values.title} onChange={formik.handleChange} name='title' className='editNoteInput' type='text'/><br/>
-            <label className='editNoteLabel'>Content :</label><br/>
-            <textarea  value={formik.values.content} onChange={formik.handleChange} name='content' className='editNoteTextArea'></textarea><br/>
-            <label className='editNoteLabel'>Image :</label><br/>
-            <input  name='image' onChange={formik.handleChange} type='file'/><br/>
-            <span>{formik.values.image}</span><br/>
-            <input disabled={disable} type='submit' value="update" className={!disable ? 'updateButton' :"updateDisableButton" } />
-        </form>
-        </div>
+        {
+            isLoading ? 
+            <div className='loadingContainer'>Fetching Data....Please wait....</div>
+            :
+            <div className='editContainer'>
+            <form className='editMinicontainer' onSubmit={formik.handleSubmit}>
+                <label className='editNoteLabel'>Title :</label><br/>
+                <input value={formik.values.title} onChange={formik.handleChange} name='title' className='editNoteInput' type='text'/><br/>
+                <label className='editNoteLabel'>Content :</label><br/>
+                <textarea  value={formik.values.content} onChange={formik.handleChange} name='content' className='editNoteTextArea'></textarea><br/>
+                <label className='editNoteLabel'>Image :</label><br/>
+                <input  name='image' onChange={formik.handleChange} type='file'/><br/>
+                <span>{formik.values.image}</span><br/>
+                <input disabled={disable} type='submit' value="update" className={!disable ? 'updateButton' :"updateDisableButton" } />
+            </form>
+            </div>
+        }
     </div>
   )
 }
