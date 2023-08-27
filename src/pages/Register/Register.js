@@ -18,7 +18,7 @@ function Register() {
         password:password.current?.value,
         city:city.current?.value
       }
-      await axios.post("http://localhost:8000/api/users/",newUser)
+      await axios.post("https://note-taking-api-8e7j.onrender.com/api/users/",newUser)
       alert("Successfully Registered")
       nav("/")
     } catch (error) {

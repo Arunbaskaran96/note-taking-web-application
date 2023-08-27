@@ -29,7 +29,7 @@ function Addnote() {
           data.append("name",fileName)
           newData.image=fileName
           try {
-            await axios.post("http://localhost:8000/api/upload",data)
+            await axios.post("https://note-taking-api-8e7j.onrender.com/api/upload",data)
             addDispatch(addnewData(newData))
             title.current.value=null
             content.current.value=null
@@ -42,7 +42,7 @@ function Addnote() {
       console.log(newData)
       try {
         alert("Successfully added")
-        await axios.post(`http://localhost:8000/api/notes/addnote/${user._id}`,newData)
+        await axios.post(`https://note-taking-api-8e7j.onrender.com/api/notes/addnote/${user._id}`,newData)
       } catch (error) {
         console.log(error)
       }

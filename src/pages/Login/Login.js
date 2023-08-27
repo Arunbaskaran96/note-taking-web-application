@@ -24,7 +24,7 @@ function Login() {
         email:email.current.value,
         password:password.current.value
       }
-      const {data}=await axios.post("http://localhost:8000/api/users/login",userData)
+      const {data}=await axios.post("https://note-taking-api-8e7j.onrender.com/api/users/login",userData)
       window.localStorage.setItem("user",JSON.stringify(data))
       userDispatch(addUser(data))
       nav("/homepage")

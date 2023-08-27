@@ -47,7 +47,7 @@ function Homepage() {
     useEffect(()=>{
       const getData=async()=>{
         try {
-          const notes=await axios.get(`http://localhost:8000/api/notes/${user._id}`)
+          const notes=await axios.get(`https://note-taking-api-8e7j.onrender.com/api/notes/${user._id}`)
           dataDispatch(noteData(notes.data))
           // console.log(notes.data)
         } catch (error) {
@@ -67,7 +67,7 @@ function Homepage() {
       const deleteHandler=async(item)=>{
         try {
           deleteDispath(deleteOldData(item))
-          await axios.delete(`http://localhost:8000/api/notes/${item._id}`)
+          await axios.delete(`https://note-taking-api-8e7j.onrender.com/api/notes/${item._id}`)
         } catch (error) {
           console.log(error)
         }

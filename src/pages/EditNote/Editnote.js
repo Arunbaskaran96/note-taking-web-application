@@ -15,12 +15,12 @@ function Editnote() {
             image:null
         },
         validate:()=>{},
-        onSubmit:()=>{}
+        onSubmit:(value)=>{}
     })
     useEffect(()=>{
         const getNote=async()=>{
             try {
-                const {data}=await axios.get(`http://localhost:8000/api/notes/note/${params.id}`)
+                const {data}=await axios.get(`https://note-taking-api-8e7j.onrender.com/api/notes/note/${params.id}`)
                 formik.setValues(data)
                 console.log(data)
             } catch (error) {
