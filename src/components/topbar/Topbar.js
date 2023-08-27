@@ -1,7 +1,13 @@
 import React from 'react'
 import "./Topbar.css"
+import { useNavigate } from 'react-router'
 
 function Topbar() {
+  const nav=useNavigate()
+  const logoutHandler=()=>{
+    window.localStorage.removeItem("user")
+    nav("/")
+  }
   return (
     <div className='topbarWrapper'>
         <div className='topbaarLeft'>
@@ -10,7 +16,7 @@ function Topbar() {
         </div>
         <div className='topbarRight'>
             <h5 className='userName'>Arun</h5>
-            <button className='topbarButton'>Toogle</button>
+            <button onClick={logoutHandler} className='topbarButton'>Log out</button>
         </div>
     </div>
   )

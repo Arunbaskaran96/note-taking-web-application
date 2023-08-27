@@ -42,6 +42,7 @@
 .topbarButton{
     background-color: red;
     padding: 5px;
+    cursor:pointer;
 }
 
 @media only screen and (max-width: 600px) {
